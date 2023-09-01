@@ -1,5 +1,6 @@
 package org.co.edu.uniquindio.estudiante_clean;
 
+import org.co.edu.uniquindio.estudiante_clean.Model.Curso;
 import org.co.edu.uniquindio.estudiante_clean.Model.Docente;
 import org.co.edu.uniquindio.estudiante_clean.Model.Estudiante;
 
@@ -8,9 +9,14 @@ import org.co.edu.uniquindio.estudiante_clean.Model.Estudiante;
 public class Main {
     public static void main(String[] args) {
         Estudiante estudiante1 = crearEstudiante("Juan", 17, "juan@mail.com", 3, 3, 3.5, 4.5);
-        Estudiante estudiante2 = crearEstudiante("María", 15, "pepita@mail.com", 1, 2, 2.5, 4.5);
+        Estudiante estudiante2 = crearEstudiantePorConstructor("María", 15, "pepita@mail.com", 1, 2, 2.5, 4.5);
         Estudiante estudiante3 = crearEstudiante("Pepe", 20, "pepe@mail.com", 4, 4, 2.5, 4.5);
         Docente docente = new Docente("Carlos", 35, "CarlosMiron@mail.com");
+        Curso curso = new Curso("Programación 1", 2, "2N", 3, "Nocturna");
+        curso.setEstudiante1(estudiante1);
+        curso.setEstudiante2(estudiante2);
+        curso.setEstudiante3(estudiante3);
+        curso.setDocente(docente);
     }
 
     private static Estudiante crearEstudiante(String nombre, int edad, String correo, int semestre, double nota1, double nota2, double nota3){
